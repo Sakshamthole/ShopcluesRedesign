@@ -7,7 +7,7 @@ export default {
   */
   mode: 'spa',
   router: {
-    base: 'ShopcluesRedesign'
+    base: '/ShopcluesRedesign/'
   },
   /*
   ** Nuxt target
