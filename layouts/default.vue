@@ -12,6 +12,8 @@
     <!-- Body -->
     <v-content light>
       <nuxt /> 
+      
+      <Slide/>
     </v-content>
     
     <!-- Footer -->
@@ -33,5 +35,6 @@ export default {}
 
    #inspire {
     background-color: white;
+    color: black;
   }
 </style>
