@@ -1,16 +1,16 @@
 <!-- This is the main default layout page. -->
-<template background="black">
+<template>
    <!--Your App Starts Here -->
    <v-app id="inspire" background="black">
-   <!-- This is the header bar. -->
+      <!-- This is the header bar. -->
       <v-card flat tile>
          <v-toolbar dense color="cyan">
             <v-card>
-               <v-img width="175px" src="logo.png"></v-img>
+               <v-img max-width="175px" src="logo.png"></v-img>
             </v-card>
             <v-spacer></v-spacer>
-            <v-card style="background:white; display: inherit;width: 50% ;height:80% ; box-shadow: 0 0 ">
-               <v-text-field color="cyan" ></v-text-field>
+            <v-card style="background:white;color:cyan; display: inherit;width: 50% ;height:80% ; box-shadow: 0 0 ; margin-left:10px">
+               <input type="text" style="width:100%; color: blue; outline:none" placeholder="Search for product"></input>
                <!-- This is the search icon. -->
                <v-btn icon color="cyan">
                   <v-icon>mdi-magnify</v-icon>
@@ -30,32 +30,51 @@
             <v-btn icon>
                <v-icon>mdi-cart-outline</v-icon>
             </v-btn>
-            <p style="margin-top: 15px; margin-left:10px; padding: 0px">
+            <p style="margin-top: 15px; padding: 0px" class="hidden-sm-and-down">
                Hi ABC 
-               <v-btn icon>
-                  <v-icon style="padding:0px">mdi-menu-down</v-icon>
-               </v-btn>
+               <v-icon style="padding:0px">mdi-menu-down</v-icon>
             </p>
+            <!-- This menu bar is to display  the title only for sm and xs screens -->
+            <v-menu >
+               <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                     icon
+                     v-bind="attrs"
+                     v-on="on"
+                     >
+                     <v-icon class="hidden-md-and-up">mdi-dots-vertical</v-icon>
+                  </v-btn>
+               </template>
+               <p style="background:lightblue; padding: 0px 0px 0px 15px; color:black; margin:0px">
+                  Hi ABC 
+                  <v-btn icon>
+                     <v-icon style="padding:0px; color: black">mdi-menu-down</v-icon>
+                  </v-btn>
+               </p>
+               <v-list style="background:lightblue; color:black">
+                  <v-list-item
+                     v-for="item in menu"
+                     >
+                     <v-list-item-title style="color:black">{{ item.title }}</v-list-item-title>
+                  </v-list-item>
+               </v-list>
+            </v-menu>
          </v-toolbar>
       </v-card>
-      <v-card tile>
+      <!-- This menu bar is to display  the title only for md and above screens -->
+      <v-card tile class="hidden-sm-and-down">
          <v-toolbar dense color="blue">
-            <v-spacer></v-spacer>
             <v-toolbar-items>
-               <v-btn style="box-shadow: 0 0 ;" color="blue"
+               <v-btn style="box-shadow: 0 0 ;font-size:12px" color="blue"
                   v-for="item in menu"
-                  :key="item.icon"
                   :to="item.link"
-                  flat
                   >{{ item.title }}</v-btn>
             </v-toolbar-items>
          </v-toolbar>
       </v-card>
-      <v-card style="background:lightblue">
+      <v-card style="background:lightblue; padding:10px; height:100%">
          <CouponPopup/>
-         <Productcopy/>
-         <!--<BorderRad/>-->
-        
+         <Product/>
       </v-card>
    </v-app>
 </template>
