@@ -4,35 +4,35 @@
    <v-app id="inspire" background="black">
       <!-- This is the header bar. -->
       <v-card flat tile>
-         <v-toolbar dense color="cyan">
+         <v-toolbar dense style="background:lightblue;">
             <v-card>
                <v-img max-width="175px" src="logo.png"></v-img>
             </v-card>
             <v-spacer></v-spacer>
-            <v-card style="background:white;color:cyan; display: inherit;width: 50% ;height:80% ; box-shadow: 0 0 ; margin-left:10px">
-               <input type="text" style="width:100%; color: blue; outline:none" placeholder="Search for product"></input>
+            <v-card style="background:white;color:cyan; display: inherit;width: 50% ;height:60% ; box-shadow: 0 0 ; margin-left:10px; border-radius:0px">
+               <input type="text" style="width:100%; color: blue; outline:none; padding-left:10px" placeholder="Search for product"></input>
                <!-- This is the search icon. -->
-               <v-btn icon color="cyan">
+               <v-btn icon color="cyan" style="margin-top: -9px">
                   <v-icon>mdi-magnify</v-icon>
                </v-btn>
             </v-card>
             <v-spacer></v-spacer>
             <!-- These are the list of icons. -->
-            <v-btn icon>
+            <v-btn icon color="cyan">
                <v-icon>mdi-map-marker-outline</v-icon>
-            </v-btn>
-            <v-btn icon>
+            </v-btn >
+            <v-btn icon color="cyan">
                <v-icon>mdi-bell-outline</v-icon>
             </v-btn>
-            <v-btn icon>
+            <v-btn icon color="cyan">
                <v-icon>mdi-heart-outline</v-icon>
             </v-btn>
-            <v-btn icon>
+            <v-btn icon color="cyan">
                <v-icon>mdi-cart-outline</v-icon>
             </v-btn>
-            <p style="margin-top: 15px; padding: 0px" class="hidden-sm-and-down">
+            <p style="margin-top: 15px; padding: 0px; cursor:pointer; color:black" class="hidden-sm-and-down">
                Hi ABC 
-               <v-icon style="padding:0px">mdi-menu-down</v-icon>
+               <v-icon style="padding:0px" color="cyan">mdi-menu-down</v-icon>
             </p>
             <!-- This menu bar is to display  the title only for sm and xs screens -->
             <v-menu >
@@ -42,12 +42,12 @@
                      v-bind="attrs"
                      v-on="on"
                      >
-                     <v-icon class="hidden-md-and-up">mdi-dots-vertical</v-icon>
+                     <v-icon color="cyan" class="hidden-md-and-up">mdi-dots-vertical</v-icon>
                   </v-btn>
                </template>
                <p style="background:lightblue; padding: 0px 0px 0px 15px; color:black; margin:0px">
                   Hi ABC 
-                  <v-btn icon>
+                  <v-btn icon color="cyan">
                      <v-icon style="padding:0px; color: black">mdi-menu-down</v-icon>
                   </v-btn>
                </p>
@@ -72,7 +72,7 @@
             </v-toolbar-items>
          </v-toolbar>
       </v-card>
-      <v-card style="background:lightblue; padding:10px; height:100%">
+      <v-card style="background:lightcyan; padding:10px; height:100%">
          <CouponPopup/>
          <Product/>
       </v-card>
