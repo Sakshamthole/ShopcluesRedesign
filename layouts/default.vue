@@ -1,11 +1,12 @@
 <!-- This is the main default layout page. -->
 <template>
    <!--Your App Starts Here -->
-   <v-app >
-      <!-- This is the header bar. -->
+   <v-app>
+      <!-- This is the header. -->
       <v-card style="border-radius: 0px;">
          <v-toolbar style="background:#ACE0E5">
-               <v-img max-width="140px" src="logo1.png" style=" box-shadow: 0 0" elevation-0></v-img>
+            <!-- This is the company logo. -->
+            <v-img max-width="140px" src="logo1.png" style=" box-shadow: 0 0" elevation-0></v-img>
             <v-spacer></v-spacer>
             <v-card class="hidden-xs-only" style="background:white;color:#00A4B4; display: inherit;width: 50% ;height:60% ; box-shadow: 0 0 ; margin-left:10px; border-radius:0px">
                <input type="text" style="width:100%; color: black; outline:none; padding-left:10px" placeholder="Search for product"></input>
@@ -20,11 +21,15 @@
             <v-icon color="#00A4B4" style="padding:3px; cursor:pointer;">mdi-bell-outline</v-icon>
             <v-icon color="#00A4B4" style="padding:3px; cursor:pointer;">mdi-heart-outline</v-icon>
             <v-icon color="#00A4B4" style="padding:3px; cursor:pointer;">mdi-cart-outline</v-icon>
+            <!-- The user account details have to be loaded from a clickable dropdown in case of sm and smaller screens.
+            So class="hidden-sm-and-down" is added is to hide for sm and smaller screens. 
+            It will be visible for all screens md and larger than md. -->
             <p style="margin-top: 15px; padding: 0px; cursor:pointer; color:black" class="hidden-sm-and-down">
                Hi ABC 
                <v-icon style="padding:0px" color="#00A4B4">mdi-menu-down</v-icon>
             </p>
-                     <!-- This menu bar is to display  the title only for sm and xs screens -->
+            <!-- This menu bar is to display  the title only for sm and xs screens 
+            class="hidden-md-and-up" helps us to hide for all screens md and larger than md. -->
             <v-menu style="background:#ACE0E5;padding:0px; margin:0px">
                <template v-slot:activator="{ on, attrs }">
                   <v-btn style="padding:0px; margin:0px"
@@ -35,6 +40,7 @@
                      <v-icon color="#00A4B4" class="hidden-md-and-up" style="margin:0px;padding:0px">mdi-dots-vertical</v-icon>
                   </v-btn>
                </template>
+               <!-- The user account details which were hidden for sm and small screens are being populated here for those screens only. -->
                <p style="background:lightblue; padding: 0px 0px 0px 15px; color:black; margin:0px">
                   Hi ABC 
                   <v-btn icon color="#00A4B4">
@@ -56,9 +62,11 @@
             <v-btn icon color="#00A4B4">
                <v-icon>mdi-magnify</v-icon>
             </v-btn>
-         </v-card>         
+         </v-card>
       </v-card>
-      <!-- This menu bar is to display  the title only for md and above screens -->
+      <!-- This menu bar is to display  the title only for md and above screens.
+      class="hidden-sm-and-down" hides it for all sm and smaller screens. 
+      The code to display menu bar on sm screen is already added above. -->
       <v-card tile class="hidden-sm-and-down" style= "border-radius: 0px;">
          <v-toolbar dense color="#00A4B4">
             <v-toolbar-items>
@@ -69,19 +77,14 @@
             </v-toolbar-items>
          </v-toolbar>
       </v-card>
-
+      <v-card style="background:#D3EAEC; padding:10px; height:100%; border-radius: 0px;">
+         <CouponPopup/>
+         <Product/>
+      </v-card>
    </v-app>
 </template>
-<style> 
-   .white--text {
-   border: 1px solid;
-   }
-   #inspire {
-   background-color: white;
-   color: black;
-   }
-</style>
-<!-- This is the script to include title list in header. -->
+<!-- This is the script to include title list in header.. 
+This can then be rendered / displayed using a loop and thus making an object like this makes it easy to display details. -->
 <script>
    export default {
      data: () => ({
@@ -93,8 +96,7 @@
          { title: 'Electronics' },
          { title: 'Appliances' },
          { title: 'Sports & More' },
-         { title: 'Daily Essentials' }
-        //change column width using flex 
+         { title: 'Daily Essentials' } 
        ],
      }),
    }

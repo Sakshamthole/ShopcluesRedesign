@@ -1,7 +1,6 @@
 <!-- These are the list of available offers. -->
 <template>
    <v-container>
-      <!--<p>{{ radios || 'null' }}</p>-->
       <v-radio-group v-model="radios" :mandatory="false" style="color:black" color="black">
          <v-radio color="black" label="PREPAID40 You Save Rs 40." value="radio-1" light class="black--text"></v-radio>
          <p> Congrats! You are eligible for Flat Rs 40 off on Prepaid orders with minimum cart value of Rs 399 and Maximum discount of Rs 40. Use coupon code PREPAID40.</p>
@@ -11,9 +10,9 @@
    </v-container>
 </template>
 <style scoped>
-.black--text /deep/ label {
-    color: black;
-}
+   .black--text /deep/ label {
+   color: black;
+   }
 </style>
 <script>
    export default {
