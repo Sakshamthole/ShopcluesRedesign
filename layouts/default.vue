@@ -1,9 +1,9 @@
 <!-- This is the main default layout page. -->
 <template>
    <!--Your App Starts Here -->
-   <v-app id="inspire">
+   <v-app >
       <!-- This is the header bar. -->
-      <v-card>
+      <v-card style="border-radius: 0px;">
          <v-toolbar style="background:#ACE0E5">
                <v-img max-width="140px" src="logo1.png" style=" box-shadow: 0 0" elevation-0></v-img>
             <v-spacer></v-spacer>
@@ -59,7 +59,7 @@
          </v-card>         
       </v-card>
       <!-- This menu bar is to display  the title only for md and above screens -->
-      <v-card tile class="hidden-sm-and-down">
+      <v-card tile class="hidden-sm-and-down" style= "border-radius: 0px;">
          <v-toolbar dense color="#00A4B4">
             <v-toolbar-items>
                <v-btn style="box-shadow: 0 0 ;font-size:12px" color="#00A4B4"
@@ -69,15 +69,9 @@
             </v-toolbar-items>
          </v-toolbar>
       </v-card>
-      <v-card style="background:#D3EAEC; padding:10px; height:100%">
-         <CouponPopup/>
-         <Product/>
-      </v-card>
+
    </v-app>
 </template>
-<script>
-   export default {}
-</script>
 <style> 
    .white--text {
    border: 1px solid;

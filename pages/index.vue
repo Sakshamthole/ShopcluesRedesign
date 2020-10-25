@@ -1,14 +1,11 @@
 <template>
   <div>
-    <v-content>
-      
-      
-      
+    <product/>
     </v-content>
-
-   
-  </div>
+    </div>
 </template>
+
+
 
 <script>
 </script>

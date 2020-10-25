@@ -22,10 +22,10 @@
                      <span class="headline" color="black">Available Coupons</span>
                   </v-card-title>                    
                   <v-card style="background:lightgrey;color:darkslategrey; box-shadow: 0 0 ; border-radius:0px; padding:20px 10px">
-                     <input type="text" style="width:30%; color: darkslategrey; outline:0; border-bottom: 2px solid black; margin-left: 35%;" placeholder="Enter Coupon Code"></input>
+                     <input type="text" style="width:50%; color: darkslategrey; outline:0; border-bottom: 2px solid black; margin-left: 25%;" placeholder="Enter Coupon Code"></input>
                      <!-- This is the search icon. -->
                   </v-card>
-                  <radio/>
+                  <CouponCodeList/>
                </v-card>
                <hr>
                <v-card-actions style="background:white;">
