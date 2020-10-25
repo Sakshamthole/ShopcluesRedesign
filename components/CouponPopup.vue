@@ -17,22 +17,23 @@
                      2 offers applicable on this order     >
                   </v-btn>
                </template>
-               <v-card style="background:white; color:black">
+               <v-card style="background:white; color:black; box-shadow: 0 0 ;">
                   <v-card-title>
                      <span class="headline" color="black">Available Coupons</span>
-                  </v-card-title>
-            <v-card style="background:lightgrey;color:darkslategrey; box-shadow: 0 0 ; border-radius:0px">
-               <input type="text" style="width:40%; color: darkslategrey; outline:none; padding-left:10px" placeholder="Search for product"></input>
-               <!-- This is the search icon. -->
-            </v-card>
+                  </v-card-title>                    
+                  <v-card style="background:lightgrey;color:darkslategrey; box-shadow: 0 0 ; border-radius:0px; padding:20px 10px">
+                     <input type="text" style="width:30%; color: darkslategrey; outline:0; border-bottom: 2px solid black; margin-left: 35%;" placeholder="Enter Coupon Code"></input>
+                     <!-- This is the search icon. -->
+                  </v-card>
                   <radio/>
                </v-card>
-               <v-card-actions style="background:white; color:black">
-               <v-btn color="white" style="background:black;" text @click="dialog = false">Apply Coupon</v-btn>
+               <hr>
+               <v-card-actions style="background:white;">
+                  <v-btn color="white" elevation="2" style="background:linear-gradient(to right, orange, red);font-size:16px; padding:20px 40px; text-transform: none; margin-left:30%; width:40%" text @click="dialog = false">Apply Coupon</v-btn>
                </v-card-actions>  
-   </v-dialog>
-   <hr  style="background:white">
-   </v-col>
-   </v-row>
+            </v-dialog>
+         <hr  style="background:white">
+      </v-col>
+      </v-row>
    </v-card>
 </template>
