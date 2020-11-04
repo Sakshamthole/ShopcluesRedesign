@@ -3,13 +3,12 @@
    <v-card style="background:white; border-radius:0px">
       <v-row dense>
          <v-col md="12" sm="12">
-            <h1  style="padding-left:25px;background:white; color: black;box-shadow: 0 0 ; margin:10px 0px"> My Cart (1 Item) </h1>
-            <hr  style="background:white">
-            <v-dialog v-model="dialog" max-width="760px"> 
+            <h2  class="pa-0 pl-2 ma-0" style="background:white; color: black;box-shadow: 0 0 ;"> My Cart </h2>
+            <hr>
+            <v-dialog max-width="760px"> 
                <template v-slot:activator="{ on, attrs }" style="background:white;color:green; width: 100%; ">
                   <!-- These is the button which opens up Coupon code dialog box. -->
-                  <v-btn
-                     style="background:white;color:green; box-shadow: 0 0 ; margin-left:10px; padding:25px 0px"
+                  <v-btn class="pa-0 pl-2 ma-0" style="background:white;color:green; box-shadow: 0 0 ; text-transform: none; "
                      dark
                      v-bind="attrs"
                      v-on="on"
